@@ -1,0 +1,9 @@
+.home__banners {
+  display: flex;
+  justify-content: center;
+}
+.home__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}/*# sourceMappingURL=home.css.map */

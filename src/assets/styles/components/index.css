@@ -1,0 +1,14 @@
+.banners {
+  max-width: 1240px;
+  max-height: 223px;
+  background: #000;
+  mix-blend-mode: darken;
+  opacity: 0.3;
+  border-radius: 25px;
+  width: 100%;
+  overflow: hidden;
+}
+.banners__img {
+  max-width: 1240px;
+  width: 100%;
+}/*# sourceMappingURL=index.css.map */

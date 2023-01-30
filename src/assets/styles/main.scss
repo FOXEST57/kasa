@@ -1,0 +1,38 @@
+/* autoprefixer grid: autoplace */
+/* autoprefixer: on */
+
+
+
+// abstract
+@import 'abstracts/variables.scss';
+
+// base
+@import 'base/typography.scss';
+
+// components
+@import 'components/index.scss';
+
+// layout
+@import 'layout/index.scss';
+
+// vendors
+@import 'vendors/normalize.scss';
+
+// pages
+@import 'pages/index.scss';
+  
+.main {
+    // padding: 32px;
+    margin: 0 100px 0 100px; 
+} 
+a {
+    text-decoration: none;
+}
+li {
+    list-style-type: none;
+}
+* {
+    font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,20 @@
+.header {
+    .main-nav {
+        margin: 45px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        &__menu {
+            display: flex;
+            &__item:nth-last-child(2) {
+                margin-right: 64px;
+            }
+            &__item:hover {
+                text-decoration-line: underline;
+            }
+            &__item > a {
+                color: $primary-color;
+                font-size: 24px;
+            }
+        }
+    }
+}

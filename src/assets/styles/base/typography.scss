@@ -1,0 +1,12 @@
+$font-path: "../../fonts/Montserrat" !default;
+
+// titre = montserrat 500
+// petit texte description = montserrat 400
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url($font-path + '/static/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserra:wght@500&display=swap');

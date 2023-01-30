@@ -1,0 +1,16 @@
+.home {
+  
+    &__banners {
+        display: flex;
+        justify-content: center;
+    }
+    &__card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: $grey;
+        border-radius: 25px;
+        padding: 64px;
+        margin-bottom: 32px;
+    }
+}
