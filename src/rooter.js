@@ -16,7 +16,7 @@ const Rooter = () => {
         <HeaderContainer />
           <Routes>
               <Route path={ROUTES.HOME.PATH} element={<HomeContainer />} />
-              <Route path={ROUTES.DETAIL.PATH} element={<DetailsContainer />} />
+              <Route path={`${ROUTES.DETAIL.PATH}/:id`} element={<DetailsContainer />} />
               <Route path={ROUTES.ABOUT.PATH} element={<AboutContainer />} />
               <Route path={'*'} element={<NotFoundComponent />} />
           </Routes>

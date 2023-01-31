@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {  useParams} from "react-router-dom";
+
 import DetailsComponent from './DetailsComponent';
- 
+import LogementsData from '../../../constants/logements.json'
 const DetailsContainer = () => {
-    const [collapse, setCollapse] = useState(false);
+    const { id } = useParams();
+    console.log()
     return (
-        <DetailsComponent setCollapse={setCollapse} collapse={collapse} />
+        <DetailsComponent logement={LogementsData.find(logement => logement.id === id)}/>
     );
 }
 

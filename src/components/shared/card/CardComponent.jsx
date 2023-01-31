@@ -1,15 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const CardComponent = () => {
+const CardComponent = ({title, cover}) => {
     return (
         <div className='card'>  
             <img 
-            className='card__cover'
-            alt='acco'
-            src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg" />
-            <p className='card__title'>Titre de la location</p>
+                className='card__cover'
+                alt={title}
+                src={cover} />
+            <p className='card__title'>{title}</p>
         </div>
     );
 }
 
+CardComponent.propTypes = {
+    title: PropTypes.string.isRequired,
+    cover:  PropTypes.string.isRequired,
+}
 export default CardComponent;

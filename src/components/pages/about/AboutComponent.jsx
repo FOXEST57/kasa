@@ -3,11 +3,20 @@ import Collapse from '../../common/collapse/Collapse';
 import BannersComponent from '../../shared/banners/BannersComponent';
 import PropTypes from 'prop-types';
  
-const AboutComponent = ({text, img, setCollapse, collapse}) => {
+const AboutComponent = ({text, img, abouts}) => {
     return (
         <div>
             <BannersComponent text={text} img={img} />
-            <Collapse setCollapse={setCollapse} collapse={collapse}/>
+            {
+                     abouts?.length <= 0 ?
+                     <p>Aucune informations disponible.</p>
+                     :
+                     abouts.map(about => 
+                        <div key={about.id}>
+                             <Collapse about={about} />
+                        </div>
+                        )
+            }
         </div>
     );
 }
@@ -15,8 +24,7 @@ const AboutComponent = ({text, img, setCollapse, collapse}) => {
 AboutComponent.propTypes = {
     text: PropTypes.string,
     img:  PropTypes.string.isRequired,
-    setCollapse: PropTypes.func,
-    collapse: PropTypes.bool
+    abouts: PropTypes.array
 }
 
 export default AboutComponent;

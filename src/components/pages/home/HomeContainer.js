@@ -1,28 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import HomeComponent from './HomeComponent'
 import BannersImg from '../../../assets/images/home_banners.jpg'
+import LogementsData from '../../../constants/logements.json'
 
 const HomeContainer = () => {
-    const [logements, setLogement] = useState(null)
+    const [logements, setLogement] = useState([])
 
-   
     useEffect(() => {
-        (async () => {
-                const response = await fetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json', {
-                    method: 'GET',
-                    mode: 'no-cors',
-                })
-                console.log(response.status)
-                if(response.ok){
-                    const result = await response.json()
-                    console.log(result)
-                    setLogement(result)
-                }
-        })()
-    }, []);
-  
+        setLogement(LogementsData)
+    }, [])
     return (
-        <HomeComponent text={'Chez vous, partout et ailleurs'} img={BannersImg}/>
+        <HomeComponent text={'Chez vous, partout et ailleurs'} img={BannersImg} logements={logements} />
     );
 }
 

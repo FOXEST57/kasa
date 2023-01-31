@@ -1,63 +1,64 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ReactComponent as StarsRed} from '../../../assets/images/svg/Arrow_back.svg';
+import { ReactComponent as StarsRed} from '../../../assets/images/svg/stars_red.svg';
 import { ReactComponent as StarsGrey} from '../../../assets/images/svg/stars_grey.svg';
 
 import Collapse from '../../common/collapse/Collapse';
-const DetailsComponent = ({setCollapse, collapse}) => {
+import SlideShowComponent from '../../common/slideshow/SlideShowComponent';
+
+const DetailsComponent = ({ logement }) => {
     return (
         <div className='details'>
             <div className='details__carrousel'>
-                
+                <SlideShowComponent pictures={logement.pictures} alt={`${logement.title}`}/>
             </div>
             <div className='details__header'>
                 <div className='details__header__left'>
-                    <h2 className='details__header__left__title'>Cozy loft on the Canal Saint-Martin</h2> 
-                    <p className='details__header__left__sub-title'>Paris, Ile-de-France</p>
+                    <h2 className='details__header__left__title'>{logement.title}</h2> 
+                    <p className='details__header__left__sub-title'>{logement.location}</p>
                     <div className='details__header__left__tags'>
-                        <p className='details__header__left__tags-item'>Cozy</p>
-                        <p className='details__header__left__tags-item'>Canal</p>
-                        <p className='details__header__left__tags-item'>Paris 10</p>
+                        {
+                            logement.tags.map(tag => 
+                                    <p key={tag} className='details__header__left__tags-item'>{tag}</p>
+                                )
+                        }
                     </div>
                 </div>
                 <div className='details__header__right'>
                     <div className='details__header__right__profil'>
-                        <p className='details__header__right__profil__name'>Alexandre Dumas</p>
-                        <div className='details__header__right__profil__logo'></div> 
+                        <p className='details__header__right__profil__name'>{logement.host.name}</p>
+                        <div className='details__header__right__profil__logo'>
+                            <img src={logement.host.picture} alt={logement.host.name} />    
+                        </div> 
                     </div>
                     <div className='details__header__right__rates'>
+                     
                         <div>
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#FF6060"/>
-                            </svg>
+                             <StarsRed />
                         </div>
                         <div>
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#FF6060"/>
-                            </svg>
+                         <StarsGrey />
                         </div>
-                        <div>
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#FF6060"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3"/>
-                            </svg>
-                        </div>
+                  
                     </div>
                 </div>
             </div>
             <div className='details__body'>
-                <Collapse setCollapse={setCollapse} collapse={collapse} reduce={true}/>
-                <Collapse setCollapse={setCollapse} collapse={collapse} reduce={true}/>
+                <Collapse  reduce={true} about={
+                    {
+                        id: 1,
+                        title: 'Desription',
+                        body: logement.description
+                    }
+                }/>
+                <Collapse reduce={true} about={
+                         {
+                            id: 2,
+                            title: 'Equipements',
+                            body: logement.equiments
+                        }
+                }/>
             </div>
         </div> 
     );
@@ -65,7 +66,6 @@ const DetailsComponent = ({setCollapse, collapse}) => {
 
 
 DetailsComponent.propTypes = {
-    setCollapse: PropTypes.func,
-    collapse: PropTypes.bool
+    logement: PropTypes.object
 }
 export default DetailsComponent;
