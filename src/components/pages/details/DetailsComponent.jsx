@@ -8,6 +8,7 @@ import Collapse from '../../common/collapse/Collapse';
 import SlideShowComponent from '../../common/slideshow/SlideShowComponent';
 
 const DetailsComponent = ({ logement }) => {
+    
     const showRating = (starsRating) => {
         let stars = [];
         for (let i = 0; i < starsRating; i++){

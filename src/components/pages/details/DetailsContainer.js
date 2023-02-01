@@ -1,13 +1,17 @@
 import React from 'react';
-import {  useParams} from "react-router-dom";
+import {  useParams, Navigate  } from "react-router-dom";
+import { ROUTES } from '../../../constants/routesConst.js'
 
 import DetailsComponent from './DetailsComponent';
 import LogementsData from '../../../constants/logements.json'
 const DetailsContainer = () => {
     const { id } = useParams();
-    console.log()
+    
     return (
-        <DetailsComponent logement={LogementsData.find(logement => logement.id === id)}/>
+        !LogementsData.find(logement => logement.id === id) ?
+             <Navigate to={ROUTES.NOT_FOUND.PATH} replace={true} />
+                :
+            <DetailsComponent logement={LogementsData.find(logement => logement.id === id)}/>
     );
 }
 

@@ -1,12 +1,20 @@
-$font-path: "../../fonts/Montserrat" !default;
+// @font-face {
+//     font-family: 'Montserrat-regular';
+//     src: url('../../fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
 
-// titre = montserrat 500
-// petit texte description = montserrat 400
+// @font-face {
+//     font-family: 'Montserrat-medium';
+//     src: url('../../fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url($font-path + '/static/Montserrat-Regular.ttf') format('truetype');
+    font-family: 'Montserrat-medium';
+    src: local('Montserrat-Medium'), url('../../../../public/Montserrat-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserra:wght@500&display=swap');
