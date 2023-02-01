@@ -8,6 +8,16 @@ import Collapse from '../../common/collapse/Collapse';
 import SlideShowComponent from '../../common/slideshow/SlideShowComponent';
 
 const DetailsComponent = ({ logement }) => {
+    const showRating = (starsRating) => {
+        let stars = [];
+        for (let i = 0; i < starsRating; i++){
+            stars.push(<div key={i}><StarsRed /></div>)
+        }
+        for (let i = 0; i < 5 - starsRating; i++){
+            stars.push(<div key={starsRating + i}><StarsGrey /></div>)
+        }
+        return stars
+    }
     return (
         <div className='details'>
             <div className='details__carrousel'>
@@ -33,14 +43,9 @@ const DetailsComponent = ({ logement }) => {
                         </div> 
                     </div>
                     <div className='details__header__right__rates'>
-                     
-                        <div>
-                             <StarsRed />
-                        </div>
-                        <div>
-                         <StarsGrey />
-                        </div>
-                  
+                        {
+                            showRating(parseInt(logement.rating))
+                        }
                     </div>
                 </div>
             </div>
@@ -56,9 +61,16 @@ const DetailsComponent = ({ logement }) => {
                          {
                             id: 2,
                             title: 'Equipements',
-                            body: logement.equiments
+                            body:  <ul>
+                                        {
+                                            logement.equipments.map((item, index) =>
+                                                 <li key={item}>{item}</li>
+                                            )
+                                        }
+                                    </ul>
                         }
                 }/>
+               
             </div>
         </div> 
     );

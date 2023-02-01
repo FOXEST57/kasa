@@ -22,9 +22,9 @@ const Collapse = ({ reduce, about}) => {
                             {
                     collapse &&   
                     <div className={reduce ? 'collapse__body--reduce' : 'collapse__body'}>
-                        <p className='collapse__body__text'>
+                        <div className='collapse__body__text'>
                                 {about.body}
-                        </p>
+                        </div>
                     </div>
                 }
             </div>

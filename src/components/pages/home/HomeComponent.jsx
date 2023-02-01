@@ -7,7 +7,6 @@ import BannersComponent from '../../shared/banners/BannersComponent';
 import CardComponent from '../../shared/card/CardComponent';
 
 const HomeComponent = ({text, img, logements}) => {
-    console.log(logements.length)
     return ( 
         <div className='home'>
             <div className='home__banners'>
@@ -19,7 +18,7 @@ const HomeComponent = ({text, img, logements}) => {
                         <p>Nous n'avons aucun logement disponible pour l'instant.</p>
                         :
                         logements.map(logement => 
-                            <Link key={logement.id} to={`${ROUTES.DETAIL.PATH}?q=${logement.id}`}>
+                            <Link key={logement.id} to={`${ROUTES.DETAIL.PATH}/${logement.id}`}>
                                 <CardComponent title={logement.title} cover={logement.cover} />
                             </Link>
                         )
