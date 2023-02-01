@@ -39,3 +39,28 @@ li {
 p {
     font-family: 'Montserrat-medium';
 }
+
+//              MEDIA QUEY              
+
+@media only screen and (max-width: 595px) {
+    // main
+    .main {
+        margin: 0 25px 0 25px;
+    }
+    // navbar
+    .header .main-nav {
+        align-items: center;
+        justify-content: baseline; 
+    }
+    .header .main-nav__menu__item:nth-last-child(2) {
+        margin-right: 8px;
+    }
+    // bannes
+    .banners {
+        max-height: 141px;
+        height: auto;
+    }
+    .banners p {
+        font-size: 24px;
+    }
+}
