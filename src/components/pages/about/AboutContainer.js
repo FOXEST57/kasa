@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import BannersImg from '../../../assets/images/about_banners.jpg' 
+import React from 'react';
+import BannersImg from '../../../assets/images/about_banners.jpg'
 import { ABOUTS } from '../../../constants/aboutConst';
 
 import AboutComponent from './AboutComponent';
@@ -11,5 +11,5 @@ const AboutContainer = () => {
         </div>
     );
 }
- 
+
 export default AboutContainer;

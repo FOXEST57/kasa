@@ -20,11 +20,11 @@
 
 // pages
 @import 'pages/index.scss';
-  
+
 .main {
     // padding: 32px;
-    margin: 0 100px 0 100px; 
-} 
+    margin: 0 100px 0 100px;
+}
 a {
     text-decoration: none;
 }
@@ -40,7 +40,7 @@ p {
     font-family: 'Montserrat-medium';
 }
 
-//              MEDIA QUEY              
+//              MEDIA QUEY
 
 @media only screen and (max-width: 595px) {
     // main
@@ -50,7 +50,7 @@ p {
     // navbar
     .header .main-nav {
         align-items: center;
-        justify-content: baseline; 
+        justify-content: baseline;
     }
     .header .main-nav__menu__item:nth-last-child(2) {
         margin-right: 8px;
@@ -62,5 +62,72 @@ p {
     }
     .banners p {
         font-size: 24px;
+    }
+    // home__card
+    .home__card {
+        background: none;
+        display: block;
+        flex-wrap: nowrap;
+        border-radius: 25px;
+        padding: 0;
+        margin: 0;
+    }
+    // 404
+
+    .not-found__title {
+        font-size: 96px;
+    }
+    .not-found__text {
+        font-size: 18px;
+    }
+    .collapse__header{
+        width: 335px;
+    }
+    .collapse__body{
+        width: 335px;
+    }
+    // details
+    .details__carrousel {
+        min-height: 255px;
+        min-width:  335px;
+    }
+    .slide-show img {
+        min-height: 255px;
+        min-width:  335px;
+    }
+    .slide-show__arrow-right {
+        right: 10px;
+    }
+    .details__header {
+        display: block;
+    }
+    .details__header {
+        justify-content: normal;
+    }
+    .details__header__left__tags {
+        margin-top: 28px;
+        justify-content: normal;
+    }
+    .details__header__left__tags-item {
+        width: 100%;
+    }
+    .details__header__right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 16px;
+    }
+    .details__header__right__profil__name {
+        width: 70px;
+    }
+    .details__body {
+        display: block;
+    }
+    .details__body .collapse__header--reduce {
+        width: 335px;
+    }
+    .details__body .collapse__body--reduce {
+        max-width: 335px;
+        min-width: 335px;
     }
 }

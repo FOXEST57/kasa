@@ -8,7 +8,7 @@ import Collapse from '../../common/collapse/Collapse';
 import SlideShowComponent from '../../common/slideshow/SlideShowComponent';
 
 const DetailsComponent = ({ logement }) => {
-    
+
     const showRating = (starsRating) => {
         let stars = [];
         for (let i = 0; i < starsRating; i++){
@@ -26,27 +26,28 @@ const DetailsComponent = ({ logement }) => {
             </div>
             <div className='details__header'>
                 <div className='details__header__left'>
-                    <h2 className='details__header__left__title'>{logement.title}</h2> 
+                    <h2 className='details__header__left__title'>{logement.title}</h2>
                     <p className='details__header__left__sub-title'>{logement.location}</p>
                     <div className='details__header__left__tags'>
                         {
-                            logement.tags.map(tag => 
+                            logement.tags.map(tag =>
                                     <p key={tag} className='details__header__left__tags-item'>{tag}</p>
                                 )
                         }
                     </div>
                 </div>
                 <div className='details__header__right'>
-                    <div className='details__header__right__profil'>
-                        <p className='details__header__right__profil__name'>{logement.host.name}</p>
-                        <div className='details__header__right__profil__logo'>
-                            <img src={logement.host.picture} alt={logement.host.name} />    
-                        </div> 
-                    </div>
+
                     <div className='details__header__right__rates'>
                         {
                             showRating(parseInt(logement.rating))
                         }
+                    </div>
+                    <div className='details__header__right__profil'>
+                        <p className='details__header__right__profil__name'>{logement.host.name}</p>
+                        <div className='details__header__right__profil__logo'>
+                            <img src={logement.host.picture} alt={logement.host.name} />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,9 +72,9 @@ const DetailsComponent = ({ logement }) => {
                                     </ul>
                         }
                 }/>
-               
+
             </div>
-        </div> 
+        </div>
     );
 }
 
