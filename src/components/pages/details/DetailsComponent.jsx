@@ -38,16 +38,17 @@ const DetailsComponent = ({ logement }) => {
                 </div>
                 <div className='details__header__right'>
 
-                    <div className='details__header__right__rates'>
-                        {
-                            showRating(parseInt(logement.rating))
-                        }
-                    </div>
+
                     <div className='details__header__right__profil'>
                         <p className='details__header__right__profil__name'>{logement.host.name}</p>
                         <div className='details__header__right__profil__logo'>
                             <img src={logement.host.picture} alt={logement.host.name} />
                         </div>
+                    </div>
+                    <div className='details__header__right__rates'>
+                        {
+                            showRating(parseInt(logement.rating))
+                        }
                     </div>
                 </div>
             </div>

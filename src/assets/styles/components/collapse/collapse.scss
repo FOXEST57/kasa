@@ -1,14 +1,14 @@
 .collapse {
-    display: flex;
+/*    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;*/
     margin-bottom: 32px;
     align-items: center;
     font-size: 24px;
     &__content {
         margin-bottom: 32px;
     }
-    &__header { 
+    &__header {
         background: #FF6060;
         border-radius: 5px;
         height: 47px;
@@ -18,7 +18,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 16px 0 16px;
-       
+
     }
     &__header--reduce {
         background: #FF6060;
@@ -33,7 +33,7 @@
     }
     &__body {
         width: 1023px;
-        border-radius: 5px; 
+        border-radius: 5px;
         padding: 16px;
         background: $grey;
         &__text {
@@ -45,8 +45,8 @@
     }
     &__body--reduce {
         min-width: 582px;
-        border-radius: 5px; 
+        border-radius: 5px;
         padding: 16px;
         background: $grey;
-    } 
+    }
 }
