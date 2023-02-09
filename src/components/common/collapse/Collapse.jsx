@@ -16,9 +16,9 @@ const Collapse = ({ reduce, about}) => {
                         <ArrowBack onClick={() => setCollapse(!collapse)}/>
                     }
                 </div>
-                {/*    <div className='collapse__body' {...collapse ? '--open' : '--close'}>
-                        <p className='collapse__body__text'>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.</p>
-                    </div> */}
+                {
+                    
+                }
                             {
                     collapse &&   
                     <div className={reduce ? 'collapse__body--reduce' : 'collapse__body'}>

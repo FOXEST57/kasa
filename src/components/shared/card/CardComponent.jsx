@@ -12,7 +12,7 @@ const CardComponent = ({title, cover}) => {
         </div>
     );
 }
-
+// props version destructuré
 CardComponent.propTypes = {
     title: PropTypes.string.isRequired,
     cover:  PropTypes.string.isRequired,
